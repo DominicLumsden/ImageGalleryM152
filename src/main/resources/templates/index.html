@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" th:src="@{/js/app.js}"></script>
+</head>
+<body class="bodyTitlePage">
+<div class="container-fluid text-center">
+    <div id="titlePage" >
+    <h1 id="titlePageText" class="font-weight-bold">Rappers</h1>
+    </div>
+    <a class="h2" th:href="@{images}">Go to Image Gallery</a>
+    <br><br>
+    <img src="images/titleimage.jpg">
+</div>
+
+
+</div>
+</body>
+</html>
