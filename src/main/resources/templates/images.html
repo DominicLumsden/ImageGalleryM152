@@ -10,6 +10,12 @@
 
 </head>
 <body>
+
+<header>
+    <a class="homeLink" th:href="@{/}"><h3 class="text-center">Home</h3></a>
+</header>
+
+
 <div class="container-fluid text-center">
     <div><h2>Manage Images</h2></div>
     <div class="m-2">
@@ -31,6 +37,15 @@
 
     </div>
 
+    <div class="m-2">
+        <a class="h3" th:href="@{/images/new}">Add New Image</a>
+    </div>
+
    </div>
+
+<footer class="text-center">
+    <h3 class="font-weight-bold">&copy;Dom</h3>
+</footer>
+
 </body>
 </html>

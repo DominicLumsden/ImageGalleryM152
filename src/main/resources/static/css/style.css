@@ -3,12 +3,8 @@
     background-color: gray;
 }
 
-#titlePage{
-    background-color: black;
+.homeLink{
     color: firebrick;
-    width: 100%;
-    padding-bottom: 20px;
-    padding-top: 20px;
 }
 
 .gallery {
@@ -16,6 +12,45 @@
     grid-gap: 10px;
     padding: 5%;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+#detailButtons1{
+    margin-bottom: 30px;
+    margin-top: 30px
+}
+#detailButtons2{
+    margin-bottom: 30px;
+    margin-top: 30px
+}
+#detailButtons3{
+    margin-bottom: 30px;
+    margin-top: 30px
+}
+#detailButtons4{
+    margin-bottom: 30px;
+    margin-top: 30px
+}
+
+
+header{
+    background-color: black;
+    color: firebrick;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+
+}
+
+footer{
+    background-color: black;
+    color: firebrick;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 82px;
+    bottom: 0;
 }
 
 

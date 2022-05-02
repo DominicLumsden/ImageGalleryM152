@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <th:block th:data="image">
@@ -24,11 +25,11 @@
         <p>Last Modified:  [[${image.getDate}]]</p>
         <p>Resolution:  [[${image.getResolution}]]</p>
         <br>
-        <a class="h4 mr-3" th:href="@{'/images/details/' + ${image.id.sum(image.id,-1)}}" style="margin-bottom: 30px; margin-top: 30px"><</a>
-        <a class="h4 mr-3" th:href="@{/images/}" style="margin-bottom: 30px; margin-top: 30px">Back</a>
-        <a class="h4 mr-3" th:href="@{'/images/edit/' + ${image.id}}" style="margin-bottom: 30px; margin-top: 30px">Edit</a>
-        <a class="h4 mr-3" th:href="@{'/images/delete/' + ${image.id}}" style="margin-bottom: 30px; margin-top: 30px">Delete</a>
-        <a class="h4" th:href="@{'/images/details/' + ${image.id.sum(image.id,1)}}" style="margin-bottom: 30px; margin-top: 30px">></a>
+        <a id="detailButtons1" class="h4 mr-3" th:href="@{'/images/details/' + ${image.id.sum(image.id,-1)}}"><</a>
+        <a id="detailButtons2" class="h4 mr-3" th:href="@{/images/}" style="margin-bottom: 30px; margin-top: 30px">Back</a>
+        <a id="detailButtons3" class="h4 mr-3" th:href="@{'/images/edit/' + ${image.id}}">Edit</a>
+        <a id="detailButtons4" class="h4 mr-3" th:href="@{'/images/delete/' + ${image.id}}">Delete</a>
+        <a id="detailButtons5" class="h4" th:href="@{'/images/details/' + ${image.id.sum(image.id,1)}}">></a>
         <br>
         <br>
         <br>
