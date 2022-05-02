@@ -68,14 +68,6 @@ public class ImageController {
         Long fileSize = multipartFile.getSize();
         image.setSize(fileSize);
 
-        //Date updated
-        String fp = "C:\\Users\\Domlu\\imagegallerym152\\image-photos\\" + image.getId();
-        System.out.println(fp);
-        File f = new File(fp);
-
-        SimpleDateFormat sd = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        image.setDate(sd.format(f.lastModified()));
-
         //Resolution
         InputStream is = new BufferedInputStream(multipartFile.getInputStream());
 
@@ -97,8 +89,24 @@ public class ImageController {
 
         image.setPath(filePath);
 
+        //Date updated
+        String fp = "C:\\Users\\Domlu\\imagegallerym152\\image-photos";
+        System.out.println(fp);
+        File f = new File(fp);
+
+        SimpleDateFormat sd = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        image.setDate(sd.format(f.lastModified()));
+
+        //save all values
         service.save(image);
 
+        //change values that require id
+        String nfp = "C:\\Users\\Domlu\\imagegallerym152\\image-photos";
+        File nf = new File(nfp);
+        System.out.println(nfp);
+
+        //set values that require id
+        image.setDate(sd.format(nf.lastModified()));
         image.setPath(filePath + "\\" + image.getId() + "\\" + image.getPhotos());
 
         String uploadDir = "image-photos/" + image.getId();
