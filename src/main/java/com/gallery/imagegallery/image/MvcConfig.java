@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
 
-
+    //method to handle directory creation
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         exposeDirectory("image-photos", registry);

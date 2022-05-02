@@ -1,12 +1,6 @@
 package com.gallery.imagegallery.image;
 
-import org.apache.tomcat.jni.FileInfo;
-import org.apache.tomcat.util.http.fileupload.FileUpload;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
-import org.springframework.core.io.Resource;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -19,20 +13,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.imageio.stream.FileImageInputStream;
-import javax.imageio.stream.ImageInputStream;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.attribute.FileTime;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
+//controller
 @Controller
 public class ImageController {
     @Autowired private ImageService service;
@@ -89,7 +75,7 @@ public class ImageController {
 
         image.setPath(filePath);
 
-        //Date updated
+        //Date modified
         String fp = "C:\\Users\\Domlu\\imagegallerym152\\image-photos";
         System.out.println(fp);
         File f = new File(fp);
@@ -109,6 +95,7 @@ public class ImageController {
         image.setDate(sd.format(nf.lastModified()));
         image.setPath(filePath + "\\" + image.getId() + "\\" + image.getPhotos());
 
+        //upload images
         String uploadDir = "image-photos/" + image.getId();
         FileUploadUtil.saveFile(uploadDir, filename, multipartFile);
 

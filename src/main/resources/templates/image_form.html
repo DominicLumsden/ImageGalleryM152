@@ -1,115 +1,79 @@
 <!DOCTYPE html>
+<!--thymeleaf implementation-->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>[[${pageTitle}]]</title>
+    <!--bootstrap implementation-->
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
     <script type="text/javascript" th:src="@{/js/app.js}"></script>
 
     <!--link for image preview-->
-    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
-          rel="stylesheet" type="text/css"/>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
     <script src="script.js"></script>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <!--End of links-->
 </head>
+
 <body>
 <div class="container-fluid">
+    <!--title-->
     <div class="text-center"><h2>[[${pageTitle}]]</h2></div>
 
     <form th:action="@{/images/save}" method="post" th:object="${image}"
           enctype="multipart/form-data"
           style="max-width: 500px; margin: 0 auto;">
         <input type="hidden" th:field="*{id}">
+
+        <!--input label-->
         <div class="border border-secondary rounded p-3">
-            <!--Name-->
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Name:</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{name}" class="form-control" required minlength="2" maxlength="45">
                 </div>
             </div>
-            <!--Type
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Type:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{type}" class="form-control" required minlength="4" maxlength="10">
-                </div>
-            </div>
 
-            Path
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Path:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{path}" class="form-control" required minlength="4" maxlength="150">
-                </div>
-            </div>
-
-            Size
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Size:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{size}" class="form-control" required minlength="3" maxlength="10">
-                </div>
-            </div>
-            Date
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Date:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{date}" class="form-control" required minlength="10" maxlength="10">
-                </div>
-            </div>
-            -->
-
-            <!--Resolution
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Resolution:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{resolution}" class="form-control" required minlength="3"
-                           maxlength="15">
-                </div>
-            </div>
--->
-            <!--Photos-->
+            <!--file-->
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Photos: </label>
                 <div>
-                    <input type="file" name="img" accept="image/png, image/jpeg" onchange="readURL(this)" required >
+                    <input type="file" name="img" accept="image/png, image/jpeg" onchange="readURL(this)" required>
                 </div>
-
             </div>
+
+            <!--placeholder for picture-->
             <div class="text-center">
                 <img id="thumbnail" alt="preview">
                 <p id="newText"></p>
 
             </div>
+            <!--placeholder for edit image items-->
             <div class="text-center">
                 <br>
-
                 <th:block th:data="image">
                     <img id="removeImageInUse" th:src="@{${image.photosImagePath}}" onerror="this.style.display='none'">
                     <p id="removePathInUse">[[${image.getPath}]]</p>
                 </th:block>
                 <p class="text-center" id="removeTextInUse">[[${imageText}]]</p>
-
-
             </div>
 
+            <!--buttons-->
             <div class="text-center">
                 <button type="submit" class="btn btn-primary m-2">Save</button>
                 <button type="button" class="btn btn-secondary m-2" onclick="cancelForm()">Cancel</button>
             </div>
-
-
         </div>
     </form>
-
 </div>
 
 <script>
+
+    //script for cancel button
+    //inline code due to Thymeleaf
     function cancelForm() {
         window.location = "[[@{/images}]]";
     }

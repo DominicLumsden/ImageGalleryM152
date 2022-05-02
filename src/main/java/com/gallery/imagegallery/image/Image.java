@@ -2,6 +2,7 @@ package com.gallery.imagegallery.image;
 
 import javax.persistence.*;
 
+//create database entity
 @Entity
 @Table(name = "images")
 public class Image {
@@ -96,19 +97,7 @@ public class Image {
         this.photos = photos;
     }
 
-        /*
-                @Override
-                public String toString() {
-                    return "Image{" +
-                            "id=" + id +
-                            ", name='" + name + '\'' +
-                            ", type='" + type + '\'' +
-                            ", path='" + path + '\'' +
-                            ", date='" + date + '\'' +
-                            ", resolution='" + resolution + '\'' +
-                            '}';
-                }
-            */
+    //method to get photos
     @Transient
     public String getPhotosImagePath() {
         if (photos == null || id == null) return null;

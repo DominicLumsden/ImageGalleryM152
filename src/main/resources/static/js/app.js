@@ -1,3 +1,4 @@
+//function to add and remove images in image form
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -23,4 +24,3 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-
