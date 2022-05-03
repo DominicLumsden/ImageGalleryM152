@@ -29,11 +29,11 @@
             <p>Resolution: [[${image.getResolution}]]</p>
             <br>
             <!--navigation buttons-->
-            <a id="detailButtons1" class="h4 mr-3" th:href="@{'/images/details/' + ${image.id.sum(image.id,-1)}}"><</a>
-            <a id="detailButtons2" class="h4 mr-3" th:href="@{/images/}" style="margin-bottom: 30px; margin-top: 30px">Back</a>
-            <a id="detailButtons3" class="h4 mr-3" th:href="@{'/images/edit/' + ${image.id}}">Edit</a>
-            <a id="detailButtons4" class="h4 mr-3" th:href="@{'/images/delete/' + ${image.id}}">Delete</a>
-            <a id="detailButtons5" class="h4" th:href="@{'/images/details/' + ${image.id.sum(image.id,1)}}">></a>
+            <a id="detailButtons1" class="h4 mr-3" th:href="@{'/images/details/' + ${image.id.sum(image.id,-1)}}"><button class="w3-button w3-black w3-display-left">&#10094;</button></a>
+            <a id="detailButtons2" class="h4 mr-3" th:href="@{/images/}" style="margin-bottom: 30px; margin-top: 30px"><button class="w3-button w3-black">Back</button></a>
+            <a id="detailButtons3" class="h4 mr-3" th:href="@{'/images/edit/' + ${image.id}}"><button class="w3-button w3-black">Edit</button></a>
+            <a id="detailButtons4" class="h4 mr-3" th:href="@{'/images/delete/' + ${image.id}}"><button class="w3-button w3-black">Delete</button></a>
+            <a id="detailButtons5" class="h4" th:href="@{'/images/details/' + ${image.id.sum(image.id,1)}}"><button class="w3-button w3-black w3-display-left">&#10095;</button></a>
             <br>
             <br>
             <br>

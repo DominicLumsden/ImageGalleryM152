@@ -44,12 +44,35 @@
 
     </div>
 
+    <!--slideshow-->
+    <h2 class="w3-center">Manual Slideshow</h2>
+    <div class="text-center">
+        <div class="w3-content w3-display-container">
+            <th:block th:each="image : ${listImages}">
+                <a th:href="@{'/images/details/' + ${image.id}}">
+                    <img id="centerImageSlider" class="mySlides" th:src="@{${image.photosImagePath}}"
+                         style="height: 150px; width: 150px">
+                    <p id="centerImageSliderName" class="imageSliderName">[[${image.name}]]</p>
+                </a>
+            </th:block>
+        </div>
+    </div>
+
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
     <!--link for new image-->
     <div class="m-2">
         <a class="h3" th:href="@{/images/new}">Add New Image</a>
     </div>
 
 </div>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+</script>
 
 <!--footer-->
 <footer class="text-center">
