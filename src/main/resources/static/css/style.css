@@ -13,18 +13,19 @@ footer {
     background-color: black;
     color: firebrick;
     width: 100%;
-    padding-bottom: 20px;
+   /* padding-bottom: 20px;*/
     padding-top: 20px;
     margin-top: 82px;
-    bottom: 0;
+    padding-bottom: 20px;
+
 }
+
 
 /*Index styling*/
 
 .bodyTitlePage {
     background-color: gray;
 }
-
 
 /*images styling*/
 .gallery {
@@ -97,11 +98,6 @@ padding: 3%}
     padding: 2%;
 }
 
-
-
-
-
-
 /*details styling*/
 
 #detailButtons1 {
@@ -162,10 +158,19 @@ padding: 3%}
     height: 150px;
 }
 
+.detailsSlideshow{
+    display: block;
+}
+
 /*image form styling*/
 
 #removeImageInUse {
-    width: 200px;
-    height: 200px;
+    width: 175px;
+    height: 175px;
+}
+
+#footer-images-form{
+    position: fixed;
+    bottom: 0;
 }
 

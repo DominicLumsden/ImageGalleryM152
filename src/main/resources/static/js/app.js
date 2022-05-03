@@ -8,7 +8,6 @@ function readURL(input) {
                 .attr('src', e.target.result)
                 .width(200)
                 .height(200)
-
             $('#removeImageInUse')
                 .attr('src', e.target.result)
                 .width(0)

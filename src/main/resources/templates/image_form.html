@@ -19,6 +19,12 @@
 </head>
 
 <body>
+
+<!--header-->
+<header>
+    <h3 class="text-center">Rappers</h3>
+</header>
+
 <div class="container-fluid">
     <!--title-->
     <div class="text-center"><h2>[[${pageTitle}]]</h2></div>
@@ -47,13 +53,11 @@
 
             <!--placeholder for picture-->
             <div class="text-center">
-                <img id="thumbnail" alt="preview">
+                <img id="thumbnail" onerror="this.style.display='none'">
                 <p id="newText"></p>
-
             </div>
             <!--placeholder for edit image items-->
             <div class="text-center">
-                <br>
                 <th:block th:data="image">
                     <img id="removeImageInUse" th:src="@{${image.photosImagePath}}" onerror="this.style.display='none'">
                     <p id="removePathInUse">[[${image.getPath}]]</p>
@@ -69,6 +73,11 @@
         </div>
     </form>
 </div>
+
+<!--footer-->
+<footer id="footer-images-form" class="text-center">
+    <h3 class="font-weight-bold">&copy;Dominic Lumsden, Janis Loeffel</h3>
+</footer>
 
 <script>
 
