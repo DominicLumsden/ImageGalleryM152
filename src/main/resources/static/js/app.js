@@ -25,6 +25,39 @@ function readURL(input) {
     }
 }
 
+//toggle button
+function toggleFunction() {
+    var x = document.getElementById("gal");
+    if (x.style.display === "none") {
+        x.style.display = "grid";
+    } else {
+        x.style.display = "none";
+    }
+
+    var x2 = document.getElementById("sli");
+    if (x2.style.display === "block") {
+        x2.style.display = "none";
+    } else {
+        x2.style.display = "block";
+    }
+
+    var x3 = document.getElementById("galText");
+    if (x3.style.display === "none") {
+        x3.style.display = "block";
+    } else {
+        x3.style.display = "none";
+    }
+
+    var x4 = document.getElementById("toggle-button");
+    if (x4.innerText === "Go to Gallery") {
+        x4.innerText = "Go to Slideshow";
+    } else {
+        x4.innerText = "Go to Gallery";
+    }
+
+}
+
+
 //function to show starting image in slideshow
 function plusDivs(n) {
     showDivs(slideIndex += n);

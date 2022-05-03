@@ -30,8 +30,12 @@ footer {
 .gallery {
     display: grid;
     grid-gap: 10px;
-    padding: 5%;
+    padding: 2%;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.slideShow{
+    padding: 2%;
 }
 
 .image-item {
@@ -40,6 +44,7 @@ footer {
     width: 200px;
     padding-top: 10px;
 }
+
 
 .homeLink {
     color: firebrick;
@@ -64,9 +69,18 @@ footer {
 
 .mySlides{display: none}
 
+#gal{display: none}
+
+#galText{display: none;
+padding: 3%}
+
+
 #centerImageSlider{
     margin-left: auto;
     margin-right: auto;
+    height: 300px;
+    width: 300px;
+    border: solid brown 10px;
 }
 
 .imageSliderName{display: none}
@@ -76,8 +90,15 @@ footer {
     margin-right: auto;
     background-color: black;
     color: white;
-    width: 150px;
+    width: 300px;
 }
+
+#sli{
+    padding: 2%;
+}
+
+
+
 
 
 
