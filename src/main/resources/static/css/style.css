@@ -1,5 +1,6 @@
 /*Generic Styling*/
 
+
 header {
     background-color: black;
     color: firebrick;
@@ -21,12 +22,6 @@ footer {
 }
 
 
-/*Index styling*/
-
-.bodyTitlePage {
-    background-color: gray;
-}
-
 /*images styling*/
 .gallery {
     display: grid;
@@ -40,7 +35,6 @@ footer {
 }
 
 .image-item {
-    background-color: white;
     color: black;
     width: 200px;
     padding-top: 10px;
@@ -96,6 +90,12 @@ padding: 3%}
 
 #sli{
     padding: 2%;
+}
+
+#mode{
+    position: absolute;
+    right: 5px;
+    top: 20px;
 }
 
 /*details styling*/
@@ -173,4 +173,3 @@ padding: 3%}
     position: fixed;
     bottom: 0;
 }
-

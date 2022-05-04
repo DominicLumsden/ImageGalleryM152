@@ -14,6 +14,7 @@
 <!--header-->
 <header>
     <a class="homeLink" th:href="@{/}"><h3 class="text-center">Home</h3></a>
+    <h5 id="mode" onclick="modeFunction()">Dark Mode</h5>
 </header>
 
 
@@ -24,7 +25,7 @@
 
     <!--link for new image-->
     <div class="m-2">
-        <a class="h3" th:href="@{/images/new}">Add New Image</a>
+        <a id="newImage" class="h3" th:href="@{/images/new}">Add New Image</a>
     </div>
     <!--success message-->
     <div th:if="${message}" class="alert alert-success text-center">
@@ -78,8 +79,6 @@
 
     var slideIndex = 1;
     showDivs(slideIndex);
-
-
 
 </script>
 

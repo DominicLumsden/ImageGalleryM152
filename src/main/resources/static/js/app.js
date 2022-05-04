@@ -90,3 +90,29 @@ function showDivs(n) {
     }
     x2[slideIndex - 1].style.display = "block";
 }
+
+//dark mode function
+function modeFunction() {
+
+    var x = document.getElementById("mode");
+    if (x.innerText === "Light Mode") {
+        x.innerText = "Dark Mode";
+    } else {
+        x.innerText = "Light Mode";
+    }
+
+
+    if (document.body.style.backgroundColor === 'gray') {
+        document.body.style.backgroundColor = 'white';
+    } else {
+        document.body.style.backgroundColor = 'gray';
+    }
+
+    var x2 = document.getElementById("newImage");
+    if (x2.style.color === 'darkblue') {
+        x2.style.color = '#007bff';
+    } else {
+        x2.style.color = 'darkblue';
+    }
+
+}
